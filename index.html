@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свидание для Анастасии</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce4ec;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #880e4f;
+        }
+        .buttons {
+            position: relative;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #d81b60;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        #no-button {
+            position: absolute;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const noButton = document.getElementById('no-button');
+
+            noButton.addEventListener('mouseover', () => {
+                const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+                const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+                noButton.style.left = `${x}px`;
+                noButton.style.top = `${y}px`;
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="https://media.giphy.com/media/yedDQGWwq0heU/giphy.gif" alt="Милый котик">
+    
+    <h1>пойдешь со мной на свидание?</h1>
+    <div class="buttons">
+        <button id="yes-button" onclick="window.location.href='details.html'">Да</button>
+        <button id="no-button">Нет</button>
+    </div>
+</body>
+</html>
